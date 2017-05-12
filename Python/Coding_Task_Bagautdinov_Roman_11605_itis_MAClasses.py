@@ -1,5 +1,5 @@
 class Creator:
-    document = """
+    html = """
                   <html>
                   <head>
                     <title>Multiplication Table</title>
@@ -23,16 +23,16 @@ class Creator:
 
     def create_table(self):
         for i in range(1, 10):
-            self.document = self.document + '<tr>'
+            self.html = self.html + '<tr>'
             for j in range(1, 11):
                 if j == 1:
-                    self.document = self.document + '<th>' + str(i) + '</th>'
+                    self.html = self.html + '<th>' + str(i) + '</th>'
                 else:
-                    self.document = self.document + '<td>' + str((j - 1) * i) + '</td>'
-            self.document = self.document + '</tr>'
-        self.document = self.document + '</table>   </body>   </html>'
+                    self.html = self.html + '<td>' + str((j - 1) * i) + '</td>'
+            self.html = self.html + '</tr>'
+        self.html = self.html + '</table>   </body>   </html>'
         f = open('TableOfMultiplication.html', 'w')
-        f.write(self.document)
+        f.write(self.html)
 
 creator = Creator()
 creator.create_table()
